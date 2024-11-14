@@ -37,7 +37,11 @@ namespace lab2___filmy.Controllers
         [HttpPost]
         public IActionResult Form(Dane dane)
         {
-            return View("Wynik", dane);
+            if(ModelState.IsValid)
+            {
+                return View("Wynik", dane);
+            }
+            else return View();
         }
         public IActionResult Wynik(Dane dane)
         {

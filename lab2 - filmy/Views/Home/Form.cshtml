@@ -1,23 +1,24 @@
 ﻿@model lab2___filmy.Models.Dane
 
-<form asp-action="Form" method="post">
-    <div>
-        <label asp-for="Imie">Twoje imie</label>
-        <input asp-for="Imie" />
+<form asp-action="Form" method="post" class="form-container">
+    <div asp-validation-summary="All" class="validation-summary"></div>
+    <div class="form-group">
+        <label asp-for="Imie" class="form-label">Twoje imie</label>
+        <input asp-for="Imie" class="form-input" />
     </div>
-    <div>
-        <label asp-for="Email">Email</label>
-        <input asp-for="Email" />
+    <div class="form-group">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-input" />
     </div>
-    <div>
-        <label asp-for="Temat">Temat</label>
-        <input asp-for="Temat" />
+    <div class="form-group">
+        <label asp-for="Temat" class="form-label">Temat</label>
+        <input asp-for="Temat" class="form-input" />
     </div>
-    <div>
-        <label asp-for="Tresc">Tresc</label>
-        <textarea asp-for="Tresc"></textarea>
+    <div class="form-group">
+        <label asp-for="Tresc" class="form-label">Tresc</label>
+        <textarea asp-for="Tresc" class="form-textarea"></textarea>
     </div>
-    <div>
-        <input type="submit" value="Wyslij" />
+    <div class="form-group">
+        <input type="submit" value="Wyslij" class="form-submit" />
     </div>
 </form>
