@@ -28,5 +28,20 @@ namespace lab2___filmy.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet]
+        public IActionResult Form()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Form(Dane dane)
+        {
+            return View("Wynik", dane);
+        }
+        public IActionResult Wynik(Dane dane)
+        {
+            return View(dane);
+        }
     }
 }
