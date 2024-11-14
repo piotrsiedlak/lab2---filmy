@@ -36,6 +36,7 @@ namespace lab2___filmy.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Film film)
         {
+            film.Id = films.Count + 1;
             films.Add(film);
             return RedirectToAction(nameof(Index));
         }
