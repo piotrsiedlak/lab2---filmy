@@ -1,14 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using lab2___filmy.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace lab2___filmy.Controllers
 {
     public class FilmController : Controller
     {
+        private static IList<Film> films = new List<Film>
+        {
+            new Film(){Id = 1, Name = "Film1", Description = "opis filmu1", Price=3},
+            new Film(){Id = 2, Name = "Film2", Description = "opis filmu2", Price=5},
+            new Film(){Id = 3, Name = "Film3", Description = "opis filmu3", Price=3},
+        };
+
         // GET: FilmController
         public ActionResult Index()
         {
-            return View();
+            return View(films);
         }
 
         // GET: FilmController/Details/5
