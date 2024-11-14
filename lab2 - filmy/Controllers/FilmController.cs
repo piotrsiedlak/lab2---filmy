@@ -50,21 +50,23 @@ namespace lab2___filmy.Controllers
         // POST: FilmController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Film updatedFilm)
         {
-            try
+            var film = films.FirstOrDefault(x => x.Id == id);
+            if (film != null)
             {
-                return RedirectToAction(nameof(Index));
+                film.Name = updatedFilm.Name;
+                film.Description = updatedFilm.Description;
+                film.Price = updatedFilm.Price;
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: FilmController/Delete/5
         public ActionResult Delete(int id)
         {
+            Film film = films.FirstOrDefault(x => x.Id == id);
+            films.Remove(film);
             return View();
         }
 
